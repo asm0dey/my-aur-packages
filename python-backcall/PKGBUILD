@@ -1,7 +1,7 @@
 # Maintainer: asm0dey <pavel.finkelshtein+AUR@gmail.com>
 
 pkgname=python-backcall
-pkgver=0.1
+pkgver=0.2.0
 pkgrel=1
 pkgdesc="Backwards compatible callback APIs"
 url="https://github.com/takluyver/backcall"
@@ -10,16 +10,22 @@ license=('BSD')
 depends=(
     'python'
 )
-makedepends=('python-setuptools')
+makedepends=('python-flit' 'git')
 source=(
     "https://github.com/takluyver/backcall/archive/$pkgver.zip"
     "https://raw.githubusercontent.com/takluyver/backcall/master/LICENSE"
 )
-md5sums=('ba32936cb9db843da2336ef55c9c0dd1' '40e56b724d016484a7f790ec826d3ffc')
+md5sums=('e7927a0b0cb97da487f26666704bc99f' '40e56b724d016484a7f790ec826d3ffc')
 
 
 build() {
     cd "$srcdir/backcall-$pkgver"
+    git init
+    git add --all
+    git commit -am 'dummy'
+    flit build --format sdist
+    tar -zxvf dist/backcall-$pkgver.tar.gz backcall-$pkgver/setup.py
+    mv backcall-$pkgver/setup.py .
     python setup.py build
 }
 

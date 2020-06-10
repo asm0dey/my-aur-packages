@@ -1,15 +1,16 @@
 pkgbase = python-backcall
 	pkgdesc = Backwards compatible callback APIs
-	pkgver = 0.1
+	pkgver = 0.2.0
 	pkgrel = 1
 	url = https://github.com/takluyver/backcall
 	arch = any
 	license = BSD
-	makedepends = python-setuptools
+	makedepends = python-flit
+	makedepends = git
 	depends = python
-	source = https://github.com/takluyver/backcall/archive/0.1.zip
+	source = https://github.com/takluyver/backcall/archive/0.2.0.zip
 	source = https://raw.githubusercontent.com/takluyver/backcall/master/LICENSE
-	md5sums = ba32936cb9db843da2336ef55c9c0dd1
+	md5sums = e7927a0b0cb97da487f26666704bc99f
 	md5sums = 40e56b724d016484a7f790ec826d3ffc
 
 pkgname = python-backcall
