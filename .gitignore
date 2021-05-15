@@ -2,3 +2,4 @@
 */pkg/
 *.zst
 *.gem
+*.tar.gz
