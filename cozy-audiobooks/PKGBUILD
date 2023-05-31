@@ -1,21 +1,21 @@
-# Maintainer: Julian Gwywitz <aur@geigi.de>+
+# Maintainer: Julian Geywitz <aur@geigi.de>+
 # Maintainer: Pavel Finkelshteyn <pavel.finkelshtein+AUR@gmail.com>
 
 pkgname=cozy-audiobooks
 _gitname=cozy
 pkgdesc=' A modern audio book player for Linux using GTK+ 3.'
-pkgver=0.9.1
+pkgver=1.2.1
 pkgrel=1
 url='https://github.com/geigi/cozy'
 arch=('i686' 'x86_64' 'arm' 'armv7h' 'armv6h' 'aarch64')
 license=('GPL3')
-makedepends=('meson' 'ninja' 'libhandy')
+makedepends=('meson' 'ninja' 'libhandy' 'granite' 'libdazzle')
 depends=(
   'appstream-glib' 'desktop-file-utils' 'gst-python'
-  'gstreamer' 'gtk3' 'python-dbus' 'python-distro' 'python-requests' 'python-pytz' 'python-gobject' 'python-mutagen' 'python-cairo' 'python-peewee' 'python-packaging' 'file' 'gst-plugins-good' 'libhandy'
+  'gstreamer' 'gtk3' 'python-dbus' 'python-distro' 'python-requests' 'python-pytz' 'python-gobject' 'python-mutagen' 'python-cairo' 'python-peewee' 'python-packaging' 'file' 'gst-plugins-good' 'libhandy' 'granite' 'libdazzle'
 )
 source=( "https://github.com/geigi/cozy/archive/${pkgver}.tar.gz")
-sha256sums=('d7f0b23aee143711548c0115edfa16254cf612d5d30b2af6617acf56339c2144')
+sha256sums=('5522dd3e2aa8a75478515c4ae299e71fa32a919703cc4a532fba797363cc5844')
 
 build() {
     cd "cozy-${pkgver}"
