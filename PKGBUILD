@@ -2,7 +2,7 @@
 
 pkgname=fselect
 pkgver=0.8.5
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 url="https://github.com/jhspetersson/fselect"
 license=("MIT")
@@ -15,6 +15,7 @@ makedepends=('rust')
 depends=('gcc-libs')
 conflicts=('fselect-git')
 provides=('fselect')
+options=('!lto')
 
 build() {
     cd "$pkgname-$pkgver"
