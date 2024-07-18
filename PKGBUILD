@@ -1,8 +1,8 @@
 # Maintainer: asm0dey <pavel.finkelshtein@gmail.com>
 
 pkgname=fselect
-pkgver=0.8.5
-pkgrel=2
+pkgver=0.8.6
+pkgrel=1
 arch=('i686' 'x86_64')
 url="https://github.com/jhspetersson/fselect"
 license=("MIT")
@@ -10,7 +10,7 @@ license=("MIT")
 pkgdesc='Find files with SQL-like queries'
 
 source=("$pkgver.tar.gz::https://github.com/jhspetersson/$pkgname/archive/$pkgver.tar.gz")
-sha512sums=('263511863e6c1d6b1c7827ae483628e2c2096c3da060c4f163899eb32cc7c550c3a1882f0ff5aab541b2cc9d3fb8f7bc8145638d2d7e66801b59b227b64a9586')
+sha512sums=('6a0e89f2112e4bd118e5df84c84606d7c2f08f39bd137a8ddeff543acbd7fe5df60e58ddd82d6ef24b73f551dc7f5dfc0964154f838f168398c556f636a8595a')
 makedepends=('rust')
 depends=('gcc-libs')
 conflicts=('fselect-git')
