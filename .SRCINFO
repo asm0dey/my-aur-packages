@@ -1,12 +1,13 @@
 pkgbase = fselect
 	pkgdesc = Find files with SQL-like queries
 	pkgver = 0.8.6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/jhspetersson/fselect
 	arch = i686
 	arch = x86_64
 	license = MIT
 	makedepends = rust
+	makedepends = cmake
 	depends = gcc-libs
 	provides = fselect
 	conflicts = fselect-git
