@@ -23,6 +23,9 @@ build() {
 }
 
 package() {
+    gzip "$srcdir/fselect-$pkgver/docs/fselect.1"
+    install -Dm644 "$srcdir/fselect-$pkgver/docs/fselect.1.gz" "$pkgdir/usr/share/man/man1/fselect.1.gz"
     install -Dm755 "$pkgname-$pkgver/target/release/fselect" "$pkgdir/usr/bin/fselect"
     install -Dm644 "$pkgname-$pkgver/LICENSE-MIT" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    rm -f "$srcdir/fselect-$pkgver/docs/fselect.1.gz"
 }
