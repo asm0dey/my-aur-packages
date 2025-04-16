@@ -1,4 +1,4 @@
-# Maintainer: Carl Smedstad <carl.smedstad at protonmail dot com>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Sefa Eyeoglu <contact@scrumplex.net>
 
 pkgbase=espanso
@@ -6,8 +6,8 @@ pkgname=(
   espanso-x11
   espanso-wayland
 )
-pkgver=2.2.1
-pkgrel=4
+pkgver=2.2.3
+pkgrel=1
 pkgdesc="Cross-platform Text Expander written in Rust"
 arch=(x86_64)
 url="https://github.com/espanso/espanso"
@@ -29,15 +29,12 @@ makedepends=(
   xclip
   xdotool
 )
-
-source=("$pkgbase-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('795663cb64c28322b667998f95910134b042be2baaace5506790f7e44ae3be91')
 options=(!lto)
-
-_archive="$pkgbase-$pkgver"
+source=("$url/archive/v$pkgver/$pkgbase-$pkgver.tar.gz")
+sha256sums=('6ad4c4ed3e9ede75d5872fe0d7b5e78c9020ec53536eab0e54f3ee89f241cb74')
 
 prepare() {
-  cd "$_archive"
+  cd $pkgbase-$pkgver
 
   export RUSTUP_TOOLCHAIN=stable
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
@@ -53,7 +50,7 @@ prepare() {
 }
 
 build() {
-  cd "$_archive"
+  cd $pkgbase-$pkgver
 
   export RUSTUP_TOOLCHAIN=stable
 
@@ -70,7 +67,7 @@ build() {
 }
 
 check() {
-  cd "$_archive"
+  cd $pkgbase-$pkgver
 
   # Skip failing tests - unsure why they fail
   export RUSTUP_TOOLCHAIN=stable
@@ -100,13 +97,12 @@ package_espanso-x11() {
   conflicts=(espanso)
   replaces=(espanso)
 
-  cd "$_archive"
-
-  install -Dm755 -t "$pkgdir/usr/bin" target-x11/release/espanso
-  install -Dm644 -t "$pkgdir/usr/lib/systemd/user" espanso.service
-  install -Dm644 -t "$pkgdir/usr/share/applications" espanso.desktop
-  install -Dm644 -t "$pkgdir/usr/share/doc/espanso" ./*.md
-  install -Dm644 espanso/src/res/linux/icon.png \
+  cd $pkgbase-$pkgver
+  install -vDm755 -t "$pkgdir/usr/bin" target-x11/release/espanso
+  install -vDm644 -t "$pkgdir/usr/lib/systemd/user" espanso.service
+  install -vDm644 -t "$pkgdir/usr/share/applications" espanso.desktop
+  install -vDm644 -t "$pkgdir/usr/share/doc/espanso" ./*.md
+  install -vDm644 espanso/src/res/linux/icon.png \
     "$pkgdir/usr/share/pixmaps/espanso.png"
 }
 
@@ -127,12 +123,11 @@ package_espanso-wayland() {
   conflicts=(espanso)
   install=espanso-wayland.install
 
-  cd "$_archive"
-
-  install -Dm755 -t "$pkgdir/usr/bin" target-wayland/release/espanso
-  install -Dm644 -t "$pkgdir/usr/lib/systemd/user" espanso.service
-  install -Dm644 -t "$pkgdir/usr/share/applications" espanso.desktop
-  install -Dm644 -t "$pkgdir/usr/share/doc/espanso" ./*.md
-  install -Dm644 espanso/src/res/linux/icon.png \
+  cd $pkgbase-$pkgver
+  install -vDm755 -t "$pkgdir/usr/bin" target-wayland/release/espanso
+  install -vDm644 -t "$pkgdir/usr/lib/systemd/user" espanso.service
+  install -vDm644 -t "$pkgdir/usr/share/applications" espanso.desktop
+  install -vDm644 -t "$pkgdir/usr/share/doc/espanso" ./*.md
+  install -vDm644 espanso/src/res/linux/icon.png \
     "$pkgdir/usr/share/pixmaps/espanso.png"
 }
