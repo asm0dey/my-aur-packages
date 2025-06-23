@@ -2,10 +2,10 @@
 
 pkgname=libsrtp0
 pkgver=1.6.0
-pkgrel=1
+pkgrel=3
 arch=('i686' 'x86_64')
 url="https://github.com/cisco/libsrtp"
-license=("BSD")
+license=("BSD-3-Clause")
 
 pkgdesc='provides an implementation of the Secure Real-time Transport Protocol (SRTP), compatible with 0th version of lib'
 

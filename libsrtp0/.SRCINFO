@@ -1,11 +1,11 @@
 pkgbase = libsrtp0
 	pkgdesc = provides an implementation of the Secure Real-time Transport Protocol (SRTP), compatible with 0th version of lib
 	pkgver = 1.6.0
-	pkgrel = 1
+	pkgrel = 3
 	url = https://github.com/cisco/libsrtp
 	arch = i686
 	arch = x86_64
-	license = BSD
+	license = BSD-3-Clause
 	depends = glibc
 	source = v1.6.0.tar.gz::https://github.com/cisco/libsrtp/archive/v1.6.0.tar.gz
 	source = LICENSE::https://raw.githubusercontent.com/cisco/libsrtp/master/LICENSE
@@ -13,4 +13,3 @@ pkgbase = libsrtp0
 	md5sums = 2909fcf6f09ffff8430463d91c08c4e1
 
 pkgname = libsrtp0
-
