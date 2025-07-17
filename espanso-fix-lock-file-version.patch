@@ -1,0 +1,12 @@
+diff --unified --recursive --text --new-file espanso-2.2.4.orig/Cargo.lock espanso-2.2.4/Cargo.lock
+--- espanso-2.2.4.orig/Cargo.lock	2025-07-17 14:12:00.447877951 +0200
++++ espanso-2.2.4/Cargo.lock	2025-07-17 14:12:05.989584508 +0200
+@@ -656,7 +656,7 @@
+ 
+ [[package]]
+ name = "espanso"
+-version = "2.2.3"
++version = "2.2.4"
+ dependencies = [
+  "anyhow",
+  "caps",
