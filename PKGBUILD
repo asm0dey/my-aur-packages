@@ -2,7 +2,7 @@
 
 pkgname=ets-bin
 pkgdesc=' Command output timestamper '
-pkgver=0.2.1
+pkgver=0.2.2
 pkgrel=1
 url='https://github.com/zmwangx/ets'
 arch=('i686' 'x86_64' 'aarch64')
@@ -13,11 +13,11 @@ _source_prefix="https://github.com/zmwangx/ets/releases/download/v$pkgver/ets_"
 source=("LICENSE::https://raw.githubusercontent.com/zmwangx/ets/master/COPYING")
 source_x86_64=("${_source_prefix}${pkgver}_linux_amd64.tar.gz")
 source_aarch64=("${_source_prefix}${pkgver}_linux_arm64.tar.gz")
-source_i686=("${_source_prefix}${pkgver}_linux_i386.tar.gz")
-b2sums=("c74bd47ae7436c2d571168ecb62578fbde988deb0b94a8b4004d66b3c824ab2f45289a0dad06e6744265a5c7fb69c07306499d8b8a2dac266f7f8ae4ca36fb19")
-b2sums_x86_64=("22aab8b7aadd004b6411495f92e7e8dd5c1caa1a44e6d0c2f1ab2d29a58165bbb2cda68e331568b33c609e7540c5500912da71babafc05d8947a8c53a850776b")
-b2sums_aarch64=("307915ec57e1764b4957ea686701de45ea3f7eb0dd5ef8c6ddbb66539398ede5d9b8b630a6e52489487f41199a874e743d5e98b101292af4fae9c359ab6de9e9")
-b2sums_i686=("289ef138bee276f14681cb805f199791cc4ac6c119ef7a32f9da6c3f8b10f91bab381eea9ea992080f3c0de0c680163827b4dc4dbaf9e77e75548bf6ab2308fd")
+source_i686=("${_source_prefix}${pkgver}_linux_386.tar.gz")
+b2sums=('c74bd47ae7436c2d571168ecb62578fbde988deb0b94a8b4004d66b3c824ab2f45289a0dad06e6744265a5c7fb69c07306499d8b8a2dac266f7f8ae4ca36fb19')
+b2sums_i686=('bcf42e1e226ac18e77f6dd4bd6b2002803d884cad25ab9e26c01354920f1c1b75f3840af36318c41a93e4aba4567d81488752f0c747ccc5faf3f9b0768851446')
+b2sums_x86_64=('2ef3c5e5f690351ca68f88096ab61ae3cd5df6dd6dab99e18012ad3bb9e2e8fc90ec32cb5810940c152363f456440e1424e0bc6fe477bb4ee15570773aec1cd0')
+b2sums_aarch64=('efe24b8e3eab7718476c3e572780cefd1f358d146dee899205e9d030332aa84b9fcce9196ececb58302a75df76267557aa9b5e1241e237b650827735a51a3fd6')
 
 package(){
     install -Dm755 "$srcdir/ets" "$pkgdir/usr/bin/ets"
