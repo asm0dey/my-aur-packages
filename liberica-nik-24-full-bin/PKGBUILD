@@ -1,8 +1,8 @@
 # Maintainer: Pasha Finkelshteyn <pavel.finkelshtein@gmail.com>
 _jdkname=liberica-nik-24-full
 pkgname="${_jdkname}-bin"
-_java_ver=22
-_pkgver=${_java_ver}.0.1+10
+_java_ver=24
+_pkgver=${_java_ver}.0.2+13
 pkgver=${_pkgver/+/.u}
 pkgrel=1
 pkgdesc='Liberica NIK is a downstream of GraalVM Community edition. The full version provides support for JavaFX and Swing.'
@@ -50,7 +50,7 @@ source=(freedesktop-java.desktop.in
         ${_jdkname}32.png::https://raw.githubusercontent.com/openjdk/jdk/master/src/java.desktop/unix/classes/sun/awt/X11/java-icon32.png
         ${_jdkname}48.png::https://raw.githubusercontent.com/openjdk/jdk/master/src/java.desktop/unix/classes/sun/awt/X11/java-icon48.png)
 
-source_x86_64=(https://github.com/bell-sw/LibericaNIK/releases/download/24.0.1+1-${_pkgver}/bellsoft-liberica-vm-full-openjdk${_pkgver}-24.0.1+1-linux-amd64.tar.gz)
+source_x86_64=(https://github.com/bell-sw/LibericaNIK/releases/download/24.2.2+1-${_pkgver}/bellsoft-liberica-vm-full-openjdk${_pkgver}-24.2.2+1-linux-amd64.tar.gz)
 
 sha1sums=('01a9b4b5d035115644e2aec9b10a3cc0543d08e2'
           '0beca0c5ca1c07a05987ee994ebe22d59466b1da'
@@ -59,7 +59,7 @@ sha1sums=('01a9b4b5d035115644e2aec9b10a3cc0543d08e2'
           'b8233f9ff931ce97a265827fac18ed90f4e248c6'
           'a0da2952bc87a425182c3ac88e88649fbaa7cb65'
           'eb36aa73a9be98164447774217865b91e79d503c')
-sha1sums_x86_64=('b9d454c3abaf7bcfb528e830bf40d9e7dfd2760e')
+sha1sums_x86_64=('3c5a9af0fd9aa888bc986f4252e9ba74ca16d22f')
 # Upstream-provided
 
 _jvmdir="/usr/lib/jvm/${_jdkname}"
@@ -71,7 +71,7 @@ prepare() {
 }
 
 package() {
-  cd bellsoft-liberica-vm-full-openjdk22-24.0.1
+  cd "$srcdir"/bellsoft-liberica-vm-full-openjdk24-24.2.2
 
   install -dm 755 "${pkgdir}/${_jvmdir}"
   cp -a . "${pkgdir}/${_jvmdir}/"
@@ -91,11 +91,11 @@ package() {
   ln -s "/usr/share/licenses/${_jdkname}" "${pkgdir}/${_jvmdir}/legal"
 
   # Man pages
-  for f in man/man1/*; do
-    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-$_jdkname.1}"
-  done
-  rm -rf "${pkgdir}/${_jvmdir}/man"
-  ln -s /usr/share/man "${pkgdir}/${_jvmdir}/man"
+  # for f in man/man1/*; do
+  #   install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-$_jdkname.1}"
+  # done
+  # rm -rf "${pkgdir}/${_jvmdir}/man"
+  # ln -s /usr/share/man "${pkgdir}/${_jvmdir}/man"
 
   # Link JKS keystore from ca-certificates-utils
   rm -f "${pkgdir}/${_jvmdir}/lib/security/cacerts"

@@ -1,6 +1,6 @@
 pkgbase = liberica-nik-24-full-bin
 	pkgdesc = Liberica NIK is a downstream of GraalVM Community edition. The full version provides support for JavaFX and Swing.
-	pkgver = 22.0.1.u10
+	pkgver = 24.0.2.u13
 	pkgrel = 1
 	url = https://bell-sw.com/
 	install = liberica-nik-24-full.install
@@ -14,18 +14,18 @@ pkgbase = liberica-nik-24-full-bin
 	optdepends = gtk2
 	optdepends = gtk3
 	optdepends = libnet
-	provides = java-environment=22
-	provides = java-environment-openjdk=22
-	provides = java-openjfx=22
-	provides = java-runtime-headless=22
-	provides = java-runtime-headless-openjdk=22
-	provides = java-runtime=22
-	provides = java-runtime-openjdk=22
-	provides = liberica-jdk-22-bin=22.0.1.u10
-	provides = liberica-jdk-22-full-bin=22.0.1.u10
-	provides = liberica-jdk-22-lite-bin=22.0.1.u10
-	provides = liberica-jre-22-bin=22.0.1.u10
-	provides = liberica-jre-22-full-bin=22.0.1.u10
+	provides = java-environment=24
+	provides = java-environment-openjdk=24
+	provides = java-openjfx=24
+	provides = java-runtime-headless=24
+	provides = java-runtime-headless-openjdk=24
+	provides = java-runtime=24
+	provides = java-runtime-openjdk=24
+	provides = liberica-jdk-24-bin=24.0.2.u13
+	provides = liberica-jdk-24-full-bin=24.0.2.u13
+	provides = liberica-jdk-24-lite-bin=24.0.2.u13
+	provides = liberica-jre-24-bin=24.0.2.u13
+	provides = liberica-jre-24-full-bin=24.0.2.u13
 	backup = etc/liberica-nik-24-full/logging.properties
 	backup = etc/liberica-nik-24-full/management/jmxremote.access
 	backup = etc/liberica-nik-24-full/management/jmxremote.password.template
@@ -54,7 +54,7 @@ pkgbase = liberica-nik-24-full-bin
 	sha1sums = b8233f9ff931ce97a265827fac18ed90f4e248c6
 	sha1sums = a0da2952bc87a425182c3ac88e88649fbaa7cb65
 	sha1sums = eb36aa73a9be98164447774217865b91e79d503c
-	source_x86_64 = https://github.com/bell-sw/LibericaNIK/releases/download/24.0.1+1-22.0.1+10/bellsoft-liberica-vm-full-openjdk22.0.1+10-24.0.1+1-linux-amd64.tar.gz
-	sha1sums_x86_64 = b9d454c3abaf7bcfb528e830bf40d9e7dfd2760e
+	source_x86_64 = https://github.com/bell-sw/LibericaNIK/releases/download/24.2.2+1-24.0.2+13/bellsoft-liberica-vm-full-openjdk24.0.2+13-24.2.2+1-linux-amd64.tar.gz
+	sha1sums_x86_64 = 3c5a9af0fd9aa888bc986f4252e9ba74ca16d22f
 
 pkgname = liberica-nik-24-full-bin
