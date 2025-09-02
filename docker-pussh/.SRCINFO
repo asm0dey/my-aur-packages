@@ -1,6 +1,6 @@
 pkgbase = docker-pussh
 	pkgdesc = Push docker images directly to remote servers without an external registry
-	pkgver = 0.2.1
+	pkgver = 0.3.0
 	pkgrel = 1
 	url = https://github.com/psviderski/unregistry
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = docker-pussh
 	depends = docker
 	depends = bash
 	depends = openssh
-	source = docker-pussh-0.2.1::https://github.com/psviderski/unregistry/raw/refs/tags/v0.2.1/docker-pussh
-	sha256sums = 8062c6f99509305cfcadc0e88d2704f4fa4d8447b94e0f9a3d8e1b64d885218e
+	source = docker-pussh-0.3.0::https://github.com/psviderski/unregistry/raw/refs/tags/v0.3.0/docker-pussh
+	sha256sums = 38f8f9c989a3ff571bc2540d03ec3d006da3b8706a3d4c57ed3c95d58944c57d
 
 pkgname = docker-pussh
