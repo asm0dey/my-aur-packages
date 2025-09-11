@@ -1,7 +1,7 @@
 # Maintainer: asm0dey <me@asm0dey.site>
 
 pkgname=audiobookconverter-bin
-pkgver=6.2.10
+pkgver=6.5.2
 pkgrel=1
 epoch=
 pkgdesc="Improved AudioBookConverter based on freeipodsoftware release (mp3 to m4b converter)"
@@ -15,7 +15,7 @@ options=('!strip' '!emptydirs')
 install=${pkgname}.install
 source=("https://github.com/yermak/AudioBookConverter/releases/download/version_${pkgver}/AudioBookConverter-static-binaries-${pkgver}.tar.gz"
         "audiobookconverter-AudioBookConverter.desktop")
-sha512sums=('76171c2100a5c3919efe346c38b699c48637d6f85cac8074df674155e7ca85d1478a5dc52617a454b6a04c45a74cd3a51bb158ec48c972e0d80fea1e6161cde0'
+sha512sums=('e5262281e268b017be8bf3ab96cd3f1de7ac3bf58164d6b9b47059cd2967b6e332f923a2398b4c2d18061a7e1794d977d7d6d311b7670d426da3c551a4ebbcab'
             '6fafcfac49c8e7a0e2e0f2305f4812de6342a692f3a8cf7523f1d2decf49731e5ab60235ea4ecab5a9ea53c2a6463cff8fb08bc01a8ffd8b8f98f2bea80cfa6a')
 package() {
   install -dm0755 "${pkgdir}/opt/"
