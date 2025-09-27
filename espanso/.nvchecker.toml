@@ -1,0 +1,4 @@
+[espanso]
+source = "git"
+git = "https://github.com/espanso/espanso.git"
+prefix = "v"
