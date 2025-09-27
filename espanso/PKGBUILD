@@ -6,7 +6,7 @@ pkgname=(
   espanso-x11
   espanso-wayland
 )
-pkgver=2.2.4
+pkgver=2.2.7
 pkgrel=1
 pkgdesc="Cross-platform Text Expander written in Rust"
 arch=(x86_64)
@@ -32,16 +32,11 @@ makedepends=(
 options=(!lto)
 source=(
   "$url/archive/v$pkgver/$pkgbase-$pkgver.tar.gz"
-  "$pkgbase-fix-lock-file-version.patch"
 )
-sha256sums=(
-  '20f5f2b3f87dcf2fdacc83777a5e9601674bffedb7d25264544aaa7d474a95ea'
-  'aacbd6a83c38e93dfa633a904a6c5c37181e26701038c16cb97d602cb90c7229'
-)
+sha256sums=('52063431c9d9f8a4fb6b2cc5d4771f8fb13704cd414a9a600b83c87a8f1e7271')
 
 prepare() {
   cd $pkgbase-$pkgver
-  patch -Np1 < ../$pkgbase-fix-lock-file-version.patch
 
   export RUSTUP_TOOLCHAIN=stable
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
