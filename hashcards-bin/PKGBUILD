@@ -1,9 +1,9 @@
 # Maintainer: asm0dey <pavel.finkelshtein@gmail.com>
 
-pkgname=hashcars-bin
+pkgname=hashcards-bin
 _pkgname=hashcards
 pkgver=0.2.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://github.com/eudoxia0/hashcards/"
 license=("Apache-2.0")
