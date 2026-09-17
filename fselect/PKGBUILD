@@ -2,7 +2,7 @@
 
 pkgname=fselect
 pkgver=0.10.3
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 url="https://github.com/jhspetersson/fselect"
 license=("MIT")
